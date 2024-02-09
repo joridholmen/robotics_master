@@ -1,0 +1,3 @@
+[submodule "INF200/biosim"]
+	path = INF200/biosim
+	url = git@github.com:joridholmen/biosim
