@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Cells &#8212; biosim 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Animals" href="Animals.html" />
+    <link rel="prev" title="Island" href="MapIsland.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="cells">
+<h1>Cells<a class="headerlink" href="#cells" title="Permalink to this headline">¶</a></h1>
+<section id="module-biosim.Cell">
+<span id="the-cell-module"></span><h2>The cell module<a class="headerlink" href="#module-biosim.Cell" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="biosim.Cell.Cell">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">biosim.Cell.</span></span><span class="sig-name descname"><span class="pre">Cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for cells</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.counting_animals">
+<span class="sig-name descname"><span class="pre">counting_animals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.counting_animals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.counting_animals" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function for counting how many animals there are in the cell.
+We also need to differentiate between the different animals and provide two
+variables for this</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.dead_animals_natural_cause">
+<span class="sig-name descname"><span class="pre">dead_animals_natural_cause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.dead_animals_natural_cause"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.dead_animals_natural_cause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Each year some animals will die of natural causes. We check if the animal dies or not
+by using the function death_probability. After we need to remove them from the from the
+list of animals</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.feed_carnivores">
+<span class="sig-name descname"><span class="pre">feed_carnivores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.feed_carnivores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.feed_carnivores" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple">
+<li><p>sorts herbivores and carnivores by fitness</p></li>
+<li><p>makes the carnivores eat</p></li>
+<li><p>makes the carnivores gain weight</p></li>
+<li><p>remove all eaten herbivores</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.make_animals_age">
+<span class="sig-name descname"><span class="pre">make_animals_age</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.make_animals_age"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.make_animals_age" title="Permalink to this definition">¶</a></dt>
+<dd><p>Each year the animals ages. Here we use the aging function from the herbivore class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.make_animals_lose_weight">
+<span class="sig-name descname"><span class="pre">make_animals_lose_weight</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.make_animals_lose_weight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.make_animals_lose_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Each year the animal loses weight based on their own weight and eta</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.make_herbivores_eat">
+<span class="sig-name descname"><span class="pre">make_herbivores_eat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.make_herbivores_eat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.make_herbivores_eat" title="Permalink to this definition">¶</a></dt>
+<dd><p>The animals eats available fodder until their appetite is filled.
+The eat_fodder-function from the Herbivore class does this.
+Herbivores eat in a random order, and therefore need to be randomised</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.move_animals_from_cell">
+<span class="sig-name descname"><span class="pre">move_animals_from_cell</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.move_animals_from_cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.move_animals_from_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the animal has moved previously and also if move_single_animal() = True
+If it is it is added to herbs/carns_move and removed from the herbivores/carnivores_pop
+Later already_moved is changed to True</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>tot_animals, list with a list of the moving herbivores and a list of the moving</p>
+</dd>
+</dl>
+<p>carnivores
+:rtype: list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.move_animals_to_cell">
+<span class="sig-name descname"><span class="pre">move_animals_to_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_moving_animals</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.move_animals_to_cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.move_animals_to_cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the migrating animals into a new cell</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>list_of_moving_animals</strong> – list with a list of the moving herbivores and a list of the</p>
+</dd>
+</dl>
+<p>moving carnivores
+:type list_of_moving_animals: list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.newborn_animals">
+<span class="sig-name descname"><span class="pre">newborn_animals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.newborn_animals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.newborn_animals" title="Permalink to this definition">¶</a></dt>
+<dd><p>An animal gives birth maximum once per year.The function birth_probability
+calculates if the animal will give birth or not and birth_weight_loss calculates the new
+weight for the mother.
+The newborn must be added to the list of either herbivores or carnivores</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.reset_already_moved">
+<span class="sig-name descname"><span class="pre">reset_already_moved</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.reset_already_moved"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.reset_already_moved" title="Permalink to this definition">¶</a></dt>
+<dd><p>After all the animals in all the cells have moved, they will reset so that they can move
+again next year</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.set_given_parameters">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">set_given_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.set_given_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.set_given_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the parameters for the different cells for use in Cell class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="biosim.Cell.Cell.sorting_animals">
+<span class="sig-name descname"><span class="pre">sorting_animals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Cell.sorting_animals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Cell.sorting_animals" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function for sorting the animals.
+Herbivores are sorted weakest to fittest, since the weakest are eaten first
+Carnivores are sorted fittest to weakest, since the fittest eats first</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="biosim.Cell.Desert">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">biosim.Cell.</span></span><span class="sig-name descname"><span class="pre">Desert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Desert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Desert" title="Permalink to this definition">¶</a></dt>
+<dd><p>subclass for highland class</p>
+<p>Initialises desert class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>population</strong> (<em>list</em>) – list of dictionaries containing animals</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="biosim.Cell.Highland">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">biosim.Cell.</span></span><span class="sig-name descname"><span class="pre">Highland</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Highland"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Highland" title="Permalink to this definition">¶</a></dt>
+<dd><p>subclass for highland class</p>
+<p>Initialises highland class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>population</strong> (<em>list</em>) – list of dictionaries containing animals</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="biosim.Cell.Lowland">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">biosim.Cell.</span></span><span class="sig-name descname"><span class="pre">Lowland</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Lowland"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Lowland" title="Permalink to this definition">¶</a></dt>
+<dd><p>subclass for lowland cells</p>
+<p>Initialises lowland class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>population</strong> (<em>list</em>) – list of dictionaries containing animals</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="biosim.Cell.Water">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">biosim.Cell.</span></span><span class="sig-name descname"><span class="pre">Water</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/biosim/Cell.html#Water"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#biosim.Cell.Water" title="Permalink to this definition">¶</a></dt>
+<dd><p>subclass for highland class</p>
+<p>Initialises water class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>population</strong> (<em>list</em>) – list of dictionaries containing animals</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">biosim</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Simulation.html">Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MapIsland.html">Island</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cells</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-biosim.Cell">The cell module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Animals.html">Animals</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="MapIsland.html" title="previous chapter">Island</a></li>
+      <li>Next: <a href="Animals.html" title="next chapter">Animals</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Holmen Torres.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/Cell.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
